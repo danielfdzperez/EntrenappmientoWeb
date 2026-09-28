@@ -1,0 +1,670 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Guía de columnas — hoja de entrenamiento</title>
+<style>
+  :root{
+    --bg:#eef1ec;
+    --surface:#ffffff;
+    --surface-2:#e4e9e2;
+    --ink:#1c231e;
+    --ink-soft:#4c564e;
+    --line:#d3dbcf;
+    --accent:#2f5d46;
+    --accent-soft:#e4efe8;
+    --rol-entrenador:#34519e;
+    --rol-entrenador-bg:#e7ecf9;
+    --rol-cliente:#2e7d32; --warn:#a3660b;
+    --rol-cliente-bg:#e3f2e4; --warn-bg:#f8ecd9;
+    --rol-auto:#b3261e;
+    --rol-auto-bg:#fbe6e4;
+    --shadow:0 1px 2px rgba(28,35,30,0.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#141815;
+      --surface:#1b211c;
+      --surface-2:#212821;
+      --ink:#e9ede8;
+      --ink-soft:#a7b2a5;
+      --line:#2c352e;
+      --accent:#7fc4a1;
+      --accent-soft:#1e2d25;
+      --rol-entrenador:#8fa8ea;
+      --rol-entrenador-bg:#1f2740;
+      --rol-cliente:#7fd18a; --warn:#e0a94f;
+      --rol-cliente-bg:#1d3321; --warn-bg:#332811;
+      --rol-auto:#f28b82;
+      --rol-auto-bg:#3a1f1d;
+      --shadow:none;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#141815;
+    --surface:#1b211c;
+    --surface-2:#212821;
+    --ink:#e9ede8;
+    --ink-soft:#a7b2a5;
+    --line:#2c352e;
+    --accent:#7fc4a1;
+    --accent-soft:#1e2d25;
+    --rol-entrenador:#8fa8ea;
+    --rol-entrenador-bg:#1f2740;
+    --rol-cliente:#7fd18a; --warn:#e0a94f;
+    --rol-cliente-bg:#1d3321; --warn-bg:#332811;
+    --rol-auto:#f28b82;
+    --rol-auto-bg:#3a1f1d;
+    --shadow:none;
+  }
+  :root[data-theme="light"]{
+    --bg:#eef1ec;
+    --surface:#ffffff;
+    --surface-2:#e4e9e2;
+    --ink:#1c231e;
+    --ink-soft:#4c564e;
+    --line:#d3dbcf;
+    --accent:#2f5d46;
+    --accent-soft:#e4efe8;
+    --rol-entrenador:#34519e;
+    --rol-entrenador-bg:#e7ecf9;
+    --rol-cliente:#2e7d32; --warn:#a3660b;
+    --rol-cliente-bg:#e3f2e4; --warn-bg:#f8ecd9;
+    --rol-auto:#b3261e;
+    --rol-auto-bg:#fbe6e4;
+    --shadow:0 1px 2px rgba(28,35,30,0.06);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+  }
+  .page{
+    max-width:900px;
+    margin:0 auto;
+    padding:56px 24px 96px;
+  }
+  .kicker{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:12.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 10px;
+  }
+  h1{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;
+    font-size:clamp(28px,4vw,40px);
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0 0 14px;
+    text-wrap:balance;
+    color:var(--ink);
+  }
+  .lede{
+    font-size:16px;
+    color:var(--ink-soft);
+    max-width:62ch;
+    margin:0 0 32px;
+  }
+
+  .legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:16px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
+    box-shadow:var(--shadow);
+    margin-bottom:48px;
+  }
+  .legend-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    padding:6px 10px 6px 8px;
+  }
+  .legend-item b{ color:var(--ink); font-weight:600; }
+
+  section.block{ margin-bottom:56px; }
+  section.block:last-of-type{ margin-bottom:24px; }
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    border-bottom:2px solid var(--accent);
+    padding-bottom:10px;
+    margin-bottom:8px;
+  }
+  .section-head h2{
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;
+    font-size:23px;
+    font-weight:600;
+    margin:0;
+    color:var(--ink);
+  }
+  .section-marker{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:12px;
+    color:var(--accent);
+    background:var(--accent-soft);
+    padding:2px 8px;
+    border-radius:5px;
+  }
+  .section-note{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin:10px 0 20px;
+    max-width:68ch;
+  }
+  .section-note code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    background:var(--surface-2);
+    padding:1px 5px;
+    border-radius:4px;
+    font-size:.92em;
+    color:var(--ink);
+  }
+
+  .table-wrap{
+    overflow-x:auto;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:var(--surface);
+    box-shadow:var(--shadow);
+  }
+  table{
+    border-collapse:collapse;
+    width:100%;
+    min-width:720px;
+    font-size:14px;
+  }
+  thead th{
+    position:sticky;
+    top:0;
+    text-align:left;
+    font-size:11.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    background:var(--surface-2);
+    padding:11px 14px;
+    border-bottom:1px solid var(--line);
+    font-weight:600;
+  }
+  tbody td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+    color:var(--ink);
+  }
+  tbody tr:last-child td{ border-bottom:none; }
+  .col-name{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:13px;
+    font-weight:600;
+    white-space:nowrap;
+    color:var(--ink);
+  }
+  .col-name .opt{
+    display:block;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-weight:400;
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-top:2px;
+    text-transform:none;
+    letter-spacing:0;
+  }
+  .fmt{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    line-height:1.7;
+    min-width:150px;
+  }
+  .who{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:3px 9px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .who.entrenador{ background:var(--rol-entrenador-bg); color:var(--rol-entrenador); }
+  .who.cliente{ background:var(--rol-cliente-bg); color:var(--rol-cliente); }
+  .who.auto{ background:var(--rol-auto-bg); color:var(--rol-auto); }
+  .dot{ width:6px; height:6px; border-radius:50%; background:currentColor; flex:none; }
+
+  .callout{
+    margin-top:16px;
+    padding:14px 16px;
+    background:var(--accent-soft);
+    border-left:3px solid var(--accent);
+    border-radius:0 8px 8px 0;
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+  .callout b{ color:var(--ink); }
+
+  footer{
+    margin-top:64px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:640px){
+    .page{ padding:36px 16px 64px; }
+  }
+
+  /* ---- Filtro por rol ---- */
+  .filterbar{
+    position:sticky; top:0; z-index:5;
+    display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px;
+    padding:12px 14px; margin:0 0 40px;
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    box-shadow:0 4px 14px rgba(28,35,30,0.08);
+  }
+  .filterbar .lbl{ font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); font-weight:600; }
+  .chips{ display:flex; flex-wrap:wrap; gap:6px; }
+  .chip{
+    font:inherit; font-size:13px; font-weight:600; cursor:pointer;
+    display:inline-flex; align-items:center; gap:6px;
+    padding:5px 11px; border-radius:20px;
+    border:1px solid var(--line); background:var(--surface-2); color:var(--ink-soft);
+  }
+  .chip .n{ font-weight:500; opacity:.75; font-size:12px; }
+  .chip[aria-pressed="true"]{ border-color:currentColor; }
+  .chip.todos[aria-pressed="true"]{ background:var(--accent-soft); color:var(--accent); }
+  .chip.entrenador[aria-pressed="true"]{ background:var(--rol-entrenador-bg); color:var(--rol-entrenador); }
+  .chip.cliente[aria-pressed="true"]{ background:var(--rol-cliente-bg); color:var(--rol-cliente); }
+  .chip.auto[aria-pressed="true"]{ background:var(--rol-auto-bg); color:var(--rol-auto); }
+  .chip.entrenador .dot{ color:var(--rol-entrenador); } .chip.cliente .dot{ color:var(--rol-cliente); } .chip.auto .dot{ color:var(--rol-auto); }
+  .chip:focus-visible, .search:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .search{
+    flex:1 1 180px; min-width:0;
+    font:inherit; font-size:14px; padding:6px 10px;
+    border:1px solid var(--line); border-radius:8px;
+    background:var(--bg); color:var(--ink);
+  }
+  .result{ font-size:12.5px; color:var(--ink-soft); white-space:nowrap; }
+  .hidden{ display:none !important; }
+  .empty{
+    padding:28px 16px; text-align:center; color:var(--ink-soft);
+    border:1px dashed var(--line); border-radius:10px; margin-bottom:40px;
+  }
+  @media (max-width:640px){ .filterbar{ gap:8px; } .result{ width:100%; } }
+</style>
+
+<div class="page">
+
+  <p class="kicker">Guía para el entrenador</p>
+  <h1>Cómo rellenar la hoja de sesión</h1>
+  <p class="lede">
+    Qué significa cada columna, en qué formato escribirla y quién la rellena:
+    tú al diseñar la sesión, el cliente desde la app, o la propia app en
+    automático. Una guía por tipo de bloque — la sesión en conjunto,
+    Fuerza/Movilidad, y Airbike.
+  </p>
+
+  <div class="legend">
+    <span class="legend-item"><span class="who entrenador"><span class="dot"></span>Entrenador</span><b>tú lo escribes</b> en la hoja antes de la sesión</span>
+    <span class="legend-item"><span class="who cliente"><span class="dot"></span>Cliente</span><b>lo aporta</b> desde la app, durante o al cerrar</span>
+    <span class="legend-item"><span class="who auto"><span class="dot"></span>Automático</span><b>lo calcula la app</b> — no lo toques a mano</span>
+  </div>
+
+  <div class="callout" style="margin-top:-24px; margin-bottom:48px;">
+    <b>Sí/No, en cualquier columna TRUE/FALSE</b> ("Completada", "Completado",
+    "Video"): la app reconoce, sin distinguir mayúsculas, <code>true</code>,
+    <code>verdadero</code>, <code>sí</code> / <code>si</code>,
+    <code>1</code> o <code>x</code> como "sí" — cualquier otro texto, o la
+    celda vacía, cuenta como "no". Usa "TRUE"/"FALSE" para no dudar.
+  </div>
+
+
+  <div class="filterbar" role="search" aria-label="Filtrar columnas">
+    <span class="lbl">¿Quién lo rellena?</span>
+    <div class="chips">
+      <button type="button" class="chip todos" data-rol="todos" aria-pressed="true">Todos <span class="n"></span></button>
+      <button type="button" class="chip entrenador" data-rol="entrenador" aria-pressed="false"><span class="dot"></span>Entrenador <span class="n"></span></button>
+      <button type="button" class="chip cliente" data-rol="cliente" aria-pressed="false"><span class="dot"></span>Cliente <span class="n"></span></button>
+      <button type="button" class="chip auto" data-rol="auto" aria-pressed="false"><span class="dot"></span>Automático <span class="n"></span></button>
+    </div>
+    <input class="search" type="search" placeholder="Buscar columna o texto…" aria-label="Buscar">
+    <span class="result" aria-live="polite"></span>
+  </div>
+  <div class="empty hidden">Ninguna columna coincide con el filtro.</div>
+
+  <!-- SESIÓN -->
+  <section class="block">
+    <div class="section-head">
+      <h2>La sesión</h2>
+      <span class="section-marker">cabecera, antes del primer bloque</span>
+    </div>
+    <p class="section-note">
+      Seis filas sueltas, una etiqueta por fila en la columna A y su valor en
+      la columna B (no forman tabla, van localizadas por el texto de la
+      etiqueta, no por su posición). Casi todas empiezan vacías: las rellena
+      la app cuando el cliente cierra la sesión.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Etiqueta</th><th>Qué es</th><th>Formato</th><th>Quién</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-name">Intensidad</td>
+            <td>Cuán dura sintió la sesión el cliente, de 0 a 10.</td>
+            <td class="fmt">entero: 7<br>decimal: 7,5 → 8 (redondea)</td>
+            <td><span class="who cliente"><span class="dot"></span>Cliente</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Tiempo</td>
+            <td>Duración efectiva de la sesión: suma del tiempo activo y el descanso real de todos los ejercicios (no el reloj desde que se abrió la app).</td>
+            <td class="fmt">número = segundos<br>o "MM:SS" / "H:MM:SS"</td>
+            <td><span class="who auto"><span class="dot"></span>Automático</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Completada</td>
+            <td>Si la sesión se cerró del todo.</td>
+            <td class="fmt">TRUE / FALSE<br><span style="font-family:inherit">(ver equivalentes arriba)</span></td>
+            <td><span class="who auto"><span class="dot"></span>Automático</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Comentarios</td>
+            <td>Notas libres del cliente sobre la sesión completa.</td>
+            <td class="fmt">texto libre</td>
+            <td><span class="who cliente"><span class="dot"></span>Cliente</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Fecha</td>
+            <td>Fecha y hora en que se cerró la sesión. La app siempre la escribe en este formato; no intentes rellenarla tú.</td>
+            <td class="fmt">DD/MM/AAAA HH:MM</td>
+            <td><span class="who auto"><span class="dot"></span>Automático</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Fecha disponible<span class="opt">opcional</span></td>
+            <td>Oculta la sesión al cliente hasta esa fecha — útil para programar varias sesiones por adelantado sin que las vea todas de golpe. Tiene que ser <b>exactamente</b> día/mes/año con barras; una fecha imposible (p. ej. "32/01/2026") o cualquier otro formato se ignora igual que si estuviera vacía → sesión siempre visible.</td>
+            <td class="fmt">dd/mm/aaaa<br>ej: 05/03/2026</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FUERZA / MOVILIDAD -->
+  <section class="block">
+    <div class="section-head">
+      <h2>Fuerza y Movilidad</h2>
+      <span class="section-marker">marcador "Fuerza" o "Movilidad" en columna A</span>
+    </div>
+    <p class="section-note">
+      Mismo esquema de columnas para las dos — solo cambia el texto del
+      marcador que abre la sección. <b>Cada fila es un ejercicio propio</b>,
+      aunque el nombre se repita en varias filas seguidas (una pirámide, una
+      superserie): no se agrupan, cada una pide y guarda su propio dolor,
+      tiempo, descanso y completado.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Columna</th><th>Qué significa</th><th>Formato</th><th>Quién</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-name">Bloque</td>
+            <td>Cualquier texto en la <b>primera fila</b> de un bloque nuevo. Las filas siguientes se dejan vacías: heredan el bloque de la última fila que sí lo traía. El texto no agrupa — dos bloques con el mismo texto más adelante son dos bloques distintos.</td>
+            <td class="fmt">texto libre</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Ejercicio</td>
+            <td>Nombre o ID del glosario, solo en la primera fila de una tanda del mismo ejercicio. Filas siguientes vacías heredan ese ejercicio — si el bloque cambia de ejercicio a mitad (superserie), hay que volver a escribirlo.</td>
+            <td class="fmt">texto / ID del glosario</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Peso</td>
+            <td>No hace falta que sea numérico — "goma fuerte" vale igual. Vacío o "0" significa peso corporal. Es el valor planificado; el cliente puede corregirlo desde la app si no encuentra ese peso exacto.</td>
+            <td class="fmt">texto libre</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span> <span class="who cliente" style="margin-left:4px"><span class="dot"></span>corrige</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Objetivo</td>
+            <td>Repeticiones o tiempo objetivo de la serie. Un número entero o decimal (con coma o punto, se redondea) son repeticiones; el mismo número seguido de "s" es tiempo en segundos. Se deja vacío si el objetivo es RIR fijo (usar la columna RIR en su lugar).</td>
+            <td class="fmt">8 · 8,5 → 9<br>40s</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">RIR</td>
+            <td>Repeticiones en reserva objetivo — solo si Objetivo está vacío ("aguanta hasta que te queden 2 en el depósito"). Mismo formato que Objetivo, con "s" si la serie se mide en tiempo.</td>
+            <td class="fmt">2 · 2,5 → 3<br>10s</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Descanso</td>
+            <td>Descanso planificado tras esta serie. Un número solo son segundos directos. Si escribes la palabra completa "minuto"/"minutos", ese número se multiplica x60. <b>La abreviatura "min" NO se reconoce aquí</b> — "2 min" se leería como 2 segundos, no 2 minutos. Vacío = 90 segundos por defecto.</td>
+            <td class="fmt">90 → 90s<br>2 minutos → 120s<br><span style="color:var(--warn)">2 min → 2s ⚠</span></td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Completado</td>
+            <td>Se marca al registrar la serie de ese ejercicio.</td>
+            <td class="fmt">TRUE / FALSE</td>
+            <td><span class="who auto"><span class="dot"></span>Automático</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Dolor (0-10)</td>
+            <td>Dolor que sintió el cliente al hacer ese ejercicio — lo reporta él, no lo planificas tú. Es una sola columna, no hay una versión aparte "esperada" que tengas que rellenar de antemano.</td>
+            <td class="fmt">entero: 3<br>decimal: 3,5 → 4</td>
+            <td><span class="who cliente"><span class="dot"></span>Cliente</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Tiempo ejercicio</td>
+            <td>Cuánto tardó en hacer la serie, de empezar a pulsar "Completar serie".</td>
+            <td class="fmt">número = segundos<br>o "MM:SS" / "H:MM:SS"</td>
+            <td><span class="who auto"><span class="dot"></span>Automático</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Descanso real</td>
+            <td>Descanso realmente tomado (no el planificado).</td>
+            <td class="fmt">número = segundos<br>o "MM:SS" / "H:MM:SS"</td>
+            <td><span class="who auto"><span class="dot"></span>Automático</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Modificador ejercicio<span class="opt">opcional</span></td>
+            <td>Variante puntual de esta fila — p. ej. "unilateral, bajada de 3s". No se puede editar desde la app.</td>
+            <td class="fmt">texto libre</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Explicación modificador<span class="opt">opcional</span></td>
+            <td>Qué significa ese modificador, si hace falta aclararlo.</td>
+            <td class="fmt">texto libre</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Comentario</td>
+            <td>Notas libres del cliente sobre ese ejercicio en concreto.</td>
+            <td class="fmt">texto libre</td>
+            <td><span class="who cliente"><span class="dot"></span>Cliente</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Video<span class="opt">opcional</span></td>
+            <td>Marca si quieres que el cliente grabe la ejecución de este ejercicio. Al llegar a él, la app le avisa con un aviso emergente.</td>
+            <td class="fmt">TRUE / FALSE</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">VideoURL</td>
+            <td>Enlace que sube el cliente con su grabación. Se puede rellenar en el momento o más tarde, volviendo a entrar en la sesión.</td>
+            <td class="fmt">URL</td>
+            <td><span class="who cliente"><span class="dot"></span>Cliente</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>"Video" y "VideoURL"</b> se distinguen por su nombre aunque las dos
+      contengan la palabra "video": la app busca la que NO contiene "url"
+      para la primera. Puedes ponerlas en el orden que prefieras.
+    </div>
+  </section>
+
+  <!-- AIRBIKE -->
+  <section class="block">
+    <div class="section-head">
+      <h2>Airbike</h2>
+      <span class="section-marker">marcador "Airbike" en columna A</span>
+    </div>
+    <p class="section-note">
+      Esquema de columnas propio, distinto de Fuerza/Movilidad. Aquí
+      <b>cada fila es un intervalo</b>, no un ejercicio. El bloque arranca
+      igual (texto en "Bloque" solo en la primera fila del intervalo que lo
+      abre). La sesión de Airbike se ejecuta sola, de principio a fin, con
+      cuenta atrás y avisos por voz — no hay que registrar nada intervalo a
+      intervalo.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Columna</th><th>Qué significa</th><th>Formato</th><th>Quién</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-name">Bloque</td>
+            <td>Texto en la primera fila de un bloque nuevo (p. ej. "Calentamiento", "Series"); las filas siguientes de ese bloque se dejan vacías.</td>
+            <td class="fmt">texto libre</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Repeticiones</td>
+            <td>Cuántas veces se repite entera la secuencia de intervalos de ese bloque. Solo se lee en la primera fila del bloque. Vacío o no numérico = 1 (no se repite).</td>
+            <td class="fmt">número entero: 3</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Tiempo</td>
+            <td>Duración de este intervalo concreto. Un número solo son segundos directos. Aquí sí se reconoce "min" abreviado (y también "minuto"/"minutos") multiplicando x60 — <b>distinto de "Descanso" en Fuerza/Movilidad</b>, que solo entiende la palabra completa. También admite el sufijo "s" explícito. Si no se entiende el texto, se avisa y se asume 0.</td>
+            <td class="fmt">90 → 90s<br>2 min → 120s<br>2 minutos → 120s<br>90s → 90s</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Intensidad</td>
+            <td>Cómo de exigente es el intervalo. No hay lista cerrada — usa el criterio que prefieras ("Suave", "Fuerte"...).</td>
+            <td class="fmt">texto libre</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Watts<span class="opt">opcional</span></td>
+            <td>Potencia objetivo del intervalo: un número fijo, un rango (con guion o con "a" — los espacios no importan), o "Max" (sin cifra) para pedir el máximo esfuerzo.</td>
+            <td class="fmt">150<br>100-200 · 100 a 200<br>Max</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Kcal<span class="opt">opcional</span></td>
+            <td>Calorías objetivo del intervalo. Mismo formato de número fijo o rango que Watts — a diferencia de Watts, nunca admite "Max".</td>
+            <td class="fmt">10<br>10-20 · 10 a 20</td>
+            <td><span class="who entrenador"><span class="dot"></span>Entrenador</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Comentario</td>
+            <td>Notas libres sobre todo el Airbike — se rellena una sola vez al terminar (no por intervalo), no varias filas.</td>
+            <td class="fmt">texto libre</td>
+            <td><span class="who cliente"><span class="dot"></span>Cliente</span></td>
+          </tr>
+          <tr>
+            <td class="col-name">Completado</td>
+            <td>Se marca una sola vez, al pulsar "Finalizar Airbike" — igual que Comentario, no por intervalo.</td>
+            <td class="fmt">TRUE / FALSE</td>
+            <td><span class="who auto"><span class="dot"></span>Automático</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>Comentario y Completado</b> se leen y se escriben en la primera fila
+      de datos de toda la sección Airbike, no en cada intervalo — es un
+      cierre de la actividad completa.
+    </div>
+    <div class="callout" style="border-left-color:var(--warn); background:var(--warn-bg); margin-top:12px;">
+      <b>Ojo con "minutos" — no es la misma regla en todas las columnas.</b>
+      "Tiempo" aquí en Airbike entiende tanto "min" como "minuto"/"minutos".
+      Pero la columna "Descanso" de Fuerza/Movilidad solo entiende la
+      palabra completa "minuto"/"minutos" — si ahí escribes "2 min"
+      abreviado, la app lo lee como <b>2 segundos</b>, no 2 minutos. Para no
+      arriesgarte, en "Descanso" escribe siempre el número de segundos
+      directo (ej. "120") o la palabra completa ("2 minutos").
+    </div>
+  </section>
+
+  <footer>
+    El marcador de sección (columna A, celda sola) tiene que coincidir
+    exactamente con "Fuerza", "Movilidad" o "Airbike" — cualquier otro texto
+    en una fila así se ignora, no se intenta leer como sesión.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var rows=[].slice.call(document.querySelectorAll('section.block tbody tr'));
+  var sections=[].slice.call(document.querySelectorAll('section.block'));
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  var input=document.querySelector('.search');
+  var result=document.querySelector('.result');
+  var empty=document.querySelector('.empty');
+  var norm=function(t){return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');};
+  rows.forEach(function(r){
+    var roles=[];
+    r.lastElementChild.querySelectorAll('.who').forEach(function(w){
+      ['entrenador','cliente','auto'].forEach(function(k){ if(w.classList.contains(k)) roles.push(k); });
+    });
+    r._roles=roles; r._text=norm(r.textContent);
+  });
+  var count=function(k){return rows.filter(function(r){return k==='todos'||r._roles.indexOf(k)>-1;}).length;};
+  chips.forEach(function(c){ c.querySelector('.n').textContent=count(c.dataset.rol); });
+  var rol='todos';
+  function apply(){
+    var q=norm(input.value.trim()), shown=0;
+    rows.forEach(function(r){
+      var ok=(rol==='todos'||r._roles.indexOf(rol)>-1)&&(!q||r._text.indexOf(q)>-1);
+      r.classList.toggle('hidden',!ok); if(ok) shown++;
+    });
+    sections.forEach(function(sec){
+      sec.classList.toggle('hidden',!sec.querySelector('tbody tr:not(.hidden)'));
+    });
+    var filtering=rol!=='todos'||q;
+    document.querySelectorAll('section.block .callout').forEach(function(c){ c.classList.toggle('hidden',!!filtering); });
+    empty.classList.toggle('hidden',shown>0);
+    result.textContent=filtering?(shown+' de '+rows.length+' columnas'):(rows.length+' columnas');
+  }
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      rol=c.dataset.rol;
+      chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false');});
+      apply();
+    });
+  });
+  input.addEventListener('input',apply);
+  apply();
+})();
+</script>
+
+</body></html>
